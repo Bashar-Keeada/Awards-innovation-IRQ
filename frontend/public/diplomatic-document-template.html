@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diplomatic Communication - Embassy of the Republic of Iraq</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm 2cm 2cm 2cm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fff;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 2.5cm 2cm;
+        }
+        
+        /* Header Section */
+        .document-header {
+            text-align: center;
+            border-bottom: 2px solid #1a3c5a;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .embassy-emblem {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border: 1px dashed #999;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #666;
+        }
+        
+        .embassy-name {
+            font-size: 16pt;
+            font-weight: bold;
+            color: #1a3c5a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .embassy-location {
+            font-size: 12pt;
+            color: #444;
+            font-style: italic;
+        }
+        
+        /* Reference Section */
+        .reference-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            font-size: 11pt;
+        }
+        
+        .reference-left, .reference-right {
+            width: 48%;
+        }
+        
+        .reference-field {
+            margin-bottom: 5px;
+        }
+        
+        .field-label {
+            font-weight: bold;
+        }
+        
+        .field-value {
+            border-bottom: 1px solid #333;
+            display: inline-block;
+            min-width: 150px;
+            padding: 2px 5px;
+        }
+        
+        /* Addressee Section */
+        .addressee {
+            margin-bottom: 25px;
+            padding-left: 0;
+        }
+        
+        .addressee p {
+            margin-bottom: 3px;
+        }
+        
+        .addressee-title {
+            font-weight: bold;
+        }
+        
+        /* Subject Line */
+        .subject-line {
+            margin-bottom: 25px;
+            padding: 10px 0;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .subject-label {
+            font-weight: bold;
+        }
+        
+        /* Section Headings */
+        h2 {
+            font-size: 13pt;
+            font-weight: bold;
+            color: #1a3c5a;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #1a3c5a;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #333;
+            margin-top: 18px;
+            margin-bottom: 10px;
+        }
+        
+        /* Paragraphs */
+        p {
+            text-align: justify;
+            margin-bottom: 12px;
+            text-indent: 0;
+        }
+        
+        .indent {
+            text-indent: 1.5cm;
+        }
+        
+        /* Editable Fields */
+        .editable {
+            background-color: #fffde7;
+            border-bottom: 1px dotted #1a3c5a;
+            padding: 0 3px;
+            font-style: italic;
+            color: #1a3c5a;
+        }
+        
+        /* Numbered List for Requests */
+        .request-list {
+            margin-left: 1cm;
+            margin-bottom: 15px;
+        }
+        
+        .request-list li {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        
+        /* Signature Section */
+        .signature-section {
+            margin-top: 50px;
+            page-break-inside: avoid;
+        }
+        
+        .signature-line {
+            margin-top: 60px;
+            border-top: 1px solid #333;
+            width: 250px;
+            padding-top: 5px;
+        }
+        
+        .signature-name {
+            font-weight: bold;
+        }
+        
+        .signature-title {
+            font-style: italic;
+        }
+        
+        /* Footer Note */
+        .document-footer {
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            font-size: 10pt;
+            font-style: italic;
+            color: #666;
+            text-align: center;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .editable {
+                background-color: transparent;
+                border-bottom: 1px solid #333;
+            }
+            
+            .embassy-emblem {
+                border: 1px solid #999;
+            }
+        }
+        
+        /* Instructions Box - Hidden in Print */
+        .instructions {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 30px;
+            font-size: 10pt;
+            border-radius: 5px;
+        }
+        
+        .instructions h4 {
+            color: #1a3c5a;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ul {
+            margin-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 5px;
+        }
+        
+        @media print {
+            .instructions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Instructions - Hidden when printing -->
+    <div class="instructions">
+        <h4>Document Instructions</h4>
+        <ul>
+            <li>Fields marked in <span class="editable">yellow italic text</span> should be customized before printing.</li>
+            <li>Replace the emblem placeholder with the official Embassy emblem.</li>
+            <li>Print on official Embassy letterhead for formal submission.</li>
+            <li>Use Ctrl+P (or Cmd+P on Mac) to print or save as PDF.</li>
+        </ul>
+    </div>
+
+    <!-- Document Header -->
+    <div class="document-header">
+        <div class="embassy-emblem">[Official Emblem]</div>
+        <div class="embassy-name">Embassy of the Republic of Iraq</div>
+        <div class="embassy-location">Kingdom of Sweden</div>
+    </div>
+
+    <!-- Reference Section -->
+    <div class="reference-section">
+        <div class="reference-left">
+            <div class="reference-field">
+                <span class="field-label">Reference No.:</span> 
+                <span class="field-value"><span class="editable">[____]</span>/2025</span>
+            </div>
+        </div>
+        <div class="reference-right" style="text-align: right;">
+            <div class="reference-field">
+                <span class="field-label">Date:</span> 
+                <span class="field-value"><span class="editable">[DD/MM/YYYY]</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Addressee -->
+    <div class="addressee">
+        <p><strong>To:</strong></p>
+        <p>His Excellency the Minister of <span class="editable">[Target Ministry]</span></p>
+        <p>Ministry of <span class="editable">[Target Ministry]</span></p>
+        <p>Republic of Iraq</p>
+    </div>
+
+    <!-- Subject Line -->
+    <div class="subject-line">
+        <span class="subject-label">Subject:</span> Proposal for Official Approval of the <span class="editable">[Initiative Name]</span> Initiative
+    </div>
+
+    <!-- Section I: Diplomatic Introduction -->
+    <h2>I. Diplomatic Introduction</h2>
+    
+    <p class="indent">The Embassy of the Republic of Iraq in the Kingdom of Sweden presents its compliments to the Ministry of <span class="editable">[Target Ministry]</span> and has the honor to submit the following proposal for consideration by the competent authorities of the Republic of Iraq.</p>
+    
+    <p class="indent">This communication is submitted in the spirit of bilateral cooperation and mutual commitment to advancing the strategic interests of the Republic of Iraq. The Embassy affirms its full respect for the sovereignty, laws, and regulatory frameworks of the Republic of Iraq, and seeks to align the proposed initiative with the national development priorities established by the Government.</p>
+
+    <!-- Section II: Initiative Overview -->
+    <h2>II. Initiative Overview</h2>
+    
+    <h3>Background and Rationale</h3>
+    <p class="indent"><span class="editable">[Description of the initiative background, the identified need, and the rationale for proposing this initiative at the present time. This section should provide context for why this initiative is being proposed and what gap or opportunity it addresses.]</span></p>
+    
+    <h3>Strategic Objectives</h3>
+    <p class="indent">The proposed initiative aims to achieve the following strategic objectives:</p>
+    <p class="indent"><span class="editable">[Detailed description of objectives aligned with national priorities. Objectives should be specific, measurable, and clearly linked to Iraq's national development agenda.]</span></p>
+    
+    <h3>National Relevance</h3>
+    <p class="indent">This initiative directly supports the national development agenda of the Republic of Iraq, particularly in the areas of <span class="editable">[sector: health, infrastructure, education, technology, etc.]</span>. It aligns with the Government's stated priorities regarding <span class="editable">[specific policy area, development plan, or national strategy]</span>.</p>
+    
+    <h3>Target Beneficiaries</h3>
+    <p class="indent">The primary beneficiaries of this initiative include <span class="editable">[description of target population, institutions, sectors, or geographic regions that will benefit from this initiative]</span>.</p>
+    
+    <h3>Expected Impact</h3>
+    <p class="indent">Upon successful implementation, the initiative is expected to deliver measurable outcomes including <span class="editable">[quantifiable impacts in health, economic, technological, or social terms as applicable. Include projected numbers, percentages, or other metrics where possible.]</span></p>
+
+    <!-- Section III: Technical and Operational Framework -->
+    <h2>III. Technical and Operational Framework</h2>
+    
+    <h3>Implementation Model</h3>
+    <p class="indent">The initiative shall be implemented through <span class="editable">[description of implementation approach, phases, timeline, and key milestones. Specify the proposed implementation period and any phased approach.]</span></p>
+    
+    <h3>Governance and Oversight</h3>
+    <p class="indent">A governance structure shall be established comprising <span class="editable">[description of oversight bodies, steering committees, reporting mechanisms, and accountability measures]</span>. The Embassy proposes that relevant Iraqi governmental authorities maintain supervisory oversight throughout the implementation period to ensure alignment with national policies and regulatory requirements.</p>
+    
+    <h3>Legal and Regulatory Compliance</h3>
+    <p class="indent">All activities conducted under this initiative shall comply fully with the laws and regulations of the Republic of Iraq. The implementing parties commit to obtaining all necessary permits, licenses, and approvals from the competent regulatory authorities prior to the commencement of any operational activities.</p>
+    
+    <h3>Sustainability and Capacity Building</h3>
+    <p class="indent">The initiative incorporates sustainability measures including <span class="editable">[description of long-term sustainability plans, knowledge transfer mechanisms, and capacity-building components for Iraqi institutions and personnel. Explain how the initiative will create lasting impact beyond the initial implementation period.]</span></p>
+
+    <!-- Section IV: International Experience and Partnerships -->
+    <h2>IV. International Experience and Partnerships</h2>
+    
+    <h3>Previous Implementation</h3>
+    <p class="indent"><span class="editable">[Description of similar initiatives successfully implemented in other countries, with relevant outcomes, lessons learned, and evidence of effectiveness. If this is a novel initiative, describe comparable programs or methodologies that have demonstrated success.]</span></p>
+    
+    <h3>Technical Expertise</h3>
+    <p class="indent">The initiative benefits from the technical expertise of <span class="editable">[description of technical partners, academic institutions, professional organizations, or subject matter experts involved in the design and implementation of this initiative]</span>.</p>
+    
+    <h3>Supporting Organizations</h3>
+    <p class="indent">The following organizations have expressed support for or commitment to participate in this initiative: <span class="editable">[list of supporting institutions, international organizations, NGOs, private sector partners, or other stakeholders who have endorsed or agreed to support this initiative]</span>.</p>
+
+    <!-- Section V: Formal Request -->
+    <h2>V. Formal Request</h2>
+    
+    <p class="indent">In light of the foregoing, the Embassy of the Republic of Iraq in the Kingdom of Sweden respectfully requests:</p>
+    
+    <ol class="request-list">
+        <li>Official approval and endorsement of the <span class="editable">[Initiative Name]</span> initiative by the competent governmental authorities of the Republic of Iraq.</li>
+        <li>Designation of an official counterpart within the Ministry of <span class="editable">[Target Ministry]</span> to coordinate the technical and administrative aspects of implementation.</li>
+        <li><span class="editable">[Additional specific requests, such as: convening of a joint technical meeting, provision of data or information, facilitation of regulatory approvals, allocation of resources, or other forms of governmental support required for implementation.]</span></li>
+    </ol>
+    
+    <p class="indent">The Embassy remains prepared to provide any additional documentation, technical specifications, financial projections, or clarifications that may be required to facilitate the review and approval process.</p>
+
+    <!-- Section VI: Closing -->
+    <h2>VI. Closing</h2>
+    
+    <p class="indent">The Embassy of the Republic of Iraq in the Kingdom of Sweden avails itself of this opportunity to reaffirm its commitment to strengthening bilateral cooperation and supporting the developmental aspirations of the Republic of Iraq.</p>
+    
+    <p class="indent">The Embassy expresses its highest respect for the Government of the Republic of Iraq and stands ready to collaborate closely with the relevant ministries and authorities to ensure the successful realization of this initiative for the benefit of the Iraqi people.</p>
+
+    <!-- Signature Section -->
+    <div class="signature-section">
+        <p><strong>Respectfully submitted,</strong></p>
+        
+        <div class="signature-line">
+            <p class="signature-name">His Excellency <span class="editable">[Ambassador Name]</span></p>
+            <p class="signature-title">Ambassador of the Republic of Iraq</p>
+            <p class="signature-title">Kingdom of Sweden</p>
+        </div>
+    </div>
+
+    <!-- Document Footer -->
+    <div class="document-footer">
+        <p>This document is intended for official governmental use and submission to the competent authorities of the Republic of Iraq.</p>
+        <p>Embassy of the Republic of Iraq | Stockholm, Sweden</p>
+    </div>
+
+</body>
+</html>
