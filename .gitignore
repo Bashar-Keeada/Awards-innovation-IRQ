@@ -4,6 +4,11 @@
 .idea/
 .vscode/
 
+
+# AI / project metadata
+.emergent/
+
+
 # Dependencies
 node_modules/
 /node_modules
